@@ -3,7 +3,7 @@ from rest_framework import serializers
 from home.models import *
 
 
-class AuthorSerializer(serializers.HyperlinkedModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return Author.objects.create(**validated_data)
 
@@ -23,13 +23,12 @@ class AuthorSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class BookSerializerManager(serializers.ModelSerializer):
-    # for advanced version, uncomment it
-    # author = AuthorSerializer()
-
+    pass
 
     class Meta:
         model = Book
         fields = '__all__'
+
         # fields = ('title', 'author')
 
 
@@ -48,5 +47,5 @@ class BookSerializer(BookSerializerManager):
         pass
 
 
-class BookAdvancedSerializer(BookSerializerManager, serializers.HyperlinkedModelSerializer):
+class BookAdvancedSerializer(BookSerializerManager, serializers.ModelSerializer):
     author = AuthorSerializer()
