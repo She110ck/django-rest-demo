@@ -32,3 +32,21 @@ Works after authentication (of course you can comment `REST_FRAMEWORK` variable 
 |`http://localhost:8000/api/book/1/`    | PUT          | edit current book    |
 |`http://localhost:8000/api/author/1/`  | DELETE       | delete current author|
 |`http://localhost:8000/api/book/1/`    | DELETE       | delete currentbook   |
+
+## Serialization
+`serialize.py` contains serializers.
+
+## Branches
+### master branch
+
+master branch uses viewsets. In `viewset.py` defined viewsets and router.
+
+### origin branch
+origin branch uses class-based views inherited APIView.  
+File `views.py` contains custom class-based views.  
+File `generic_views.py` contains generic class-based views. Generic views uses `/api-gen/` url prefix.  
+Example: `http://localhost:8000/api-gen/books/`
+
+You can switch branches with: `git checkout <branch_name>`
+
+### Good Luck!
