@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.viewset import router
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include(router.urls))
+    # custom APIView usage
+    url(r'^api/', include('home.urls'), name='home'),
+    url(r'^api-gen/', include('home.generic_urls'), name='gnrc'),
 ]
-
