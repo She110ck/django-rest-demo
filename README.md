@@ -14,9 +14,9 @@ Rest application demonstration
 ## Usage  
 ``` bash
 git clone git@github.com:She110ck/django-rest-demo.git
-# do magick with virtualenv
+# do magic with virtualenv
 pip install -r requirements.txt
-# do magick with migrations and run
+# do magic with migrations and run
 
 ```
 Works after authentication (of course you can comment `REST_FRAMEWORK` variable in `settings.py` and work without log in).
